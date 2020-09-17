@@ -3,7 +3,7 @@ y = 1
 
 gameover = False
 
-def show_available_directions(x, y):
+def show_available_directions(x, y): # skilgreiningar á mögulegum leikjum
 
     min_x = 0
     max_x = 0
@@ -63,7 +63,7 @@ def show_available_directions(x, y):
 
     return [min_x, max_x, min_y, max_y]
 
-def check_input(input):
+def play_move(input): # skoðað hvaða átt má fara í
 
     x = 0
     y = 0
@@ -87,18 +87,19 @@ while not gameover:
         print("Victory!")
         break
 
-    valid_input = show_available_directions(x, y)
-    input_is_valid = False
+    valid_input = show_available_directions(x, y) # sýnt hvert má fara
+    input_is_valid = False # skoðað hvort input sé valid
 
     while not input_is_valid:
-        move = check_input(input("Direction: "))
+        move = play_move(input("Direction: "))
         if move[0] >= valid_input[0] and move[0] <= valid_input[1] and move[1] >= valid_input[2] and move[1] <= valid_input[3]:
             x += move[0]
             y += move[1]
             input_is_valid = True
         else:
-            print("Not a valid direction!")
+            print("Not a valid direction!") # skilgreint hvað skal gerast ef það er keyrt utan í vegg
             show_available_directions(x, y)
 
     
 
+# https://github.com/Hrannar19/TileTraveler

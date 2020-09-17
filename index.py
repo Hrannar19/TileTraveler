@@ -45,7 +45,7 @@ def show_available_directions(x, y):
 
     directions += "."
 
-    print(directions)
+    print("You can travel: {}".format(directions))
 
 def check_input(input, x, y):
     if input == 'n' or input == 'N':
@@ -84,3 +84,8 @@ while not gameover:
     if x == 3 and y == 1:
         gameover = True
         print("Victory!") 
+
+
+
+
+#https://github.com/Hrannar19/TileTraveler
